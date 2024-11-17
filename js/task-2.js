@@ -9,7 +9,15 @@
 
 `use strict`; // Код у суворому режимі
 
-function calcAverageCalories(days) {}
+function calcAverageCalories(days) {
+  if (days.length === 0) return 0; //* Перевірка на порожній масив, щоб потім не ділити на нуль
+  let total = 0;
+  for (const day of days) {
+    total += day.calories;
+  }
+  return total / days.length; //* ділемо через довжину масива, щоб результат був коректним,
+  //* навипадок якщо передані данні не заповний тиждень
+}
 
 console.log(
   calcAverageCalories([
